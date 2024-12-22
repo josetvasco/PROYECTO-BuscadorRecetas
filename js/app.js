@@ -119,6 +119,24 @@ function iniciarApp() {
     }
 
     modalBody.appendChild(listGroup);
+
+    const modalFooter = document.querySelector('.modal-footer');
+
+    limpiarHTML(modalFooter);
+
+    //Botones de agregar y favorito
+    const btnFavoritos = document.createElement('BUTTON');
+    btnFavoritos.classList.add('btn', 'btn-danger', 'col');
+    btnFavoritos.textContent = 'Guardar Favoritos';
+    //Botones de agregar y favorito
+    const btnCerrarModal = document.createElement('BUTTON');
+    btnCerrarModal.classList.add('btn', 'btn-secondary', 'col');
+    btnCerrarModal.textContent = 'Cerrar';
+    btnCerrarModal.onclick = function () {
+      modal.hide();
+    }
+
+    modalFooter.append( btnFavoritos, btnCerrarModal );
     
     modal.show();
   }
